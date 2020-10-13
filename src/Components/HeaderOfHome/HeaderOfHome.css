@@ -1,0 +1,17 @@
+.header-img{
+    position: relative;
+}
+
+.wave{
+    position: absolute;
+    bottom: 1;
+    left: 0;
+
+}
+.bg-header{
+    background-color:#ffd760
+}
+
+nav a {
+    position: relative;
+}

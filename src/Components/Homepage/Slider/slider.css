@@ -1,0 +1,14 @@
+.sliderimg{
+    width: 100%;
+    height: 500px;
+    object-fit: cover
+  }
+  .alice-carousel{
+      width: 70% !important;
+  }
+  .alice-carousel__prev-btn-item, .alice-carousel__next-btn-item {
+    color: #07ff5f;
+  }
+  .alice-carousel__prev-btn-item:hover, .alice-carousel__next-btn-item:hover {
+    color: #15d0b6;
+}
