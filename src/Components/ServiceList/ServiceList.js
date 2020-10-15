@@ -1,20 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import  { useContext } from 'react';
 import { orderContext, userContext } from '../../App';
 const ServiceList = () => {
     const [order,setOrder] = useContext(orderContext)
     const [loggedInUser,setLoggedInUser] = useContext(userContext)
-    console.log(order,loggedInUser)
+    const [selectedOrder , setSelectedOrder] = useState([])
+
+    useEffect(() => {
+        fetch(`http://localhost:8080/selectedOrders?email=` +loggedInUser.email )
+        .then(res => res.json())
+        .then(data => {
+            setSelectedOrder(data)
+        })
+    })
+
+
+
     return (
         
         <div className='row text-left'>
-            <div className="card col-md-3 m-3" >
-            <img src={order.img} className="card-img-top w-25 rounded mx-auto d-block p-4" alt="..."/>
+         {selectedOrder.map( data=>   <div className="card col-md-3 m-3" >
+            <img src={data.img} className="card-img-top w-25 rounded mx-auto d-block p-4" alt="..."/>
             <div className="card-body">
-            <h4>{order.title}</h4>
-            <p className="card-text">{order.details}</p>
+            <h4>{data.title}</h4>
+            <p className="card-text">{data.details}</p>
             </div>
-            </div>
+            </div>)}
         </div>
     );
 };

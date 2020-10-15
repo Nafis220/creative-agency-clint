@@ -2,6 +2,7 @@ import React from 'react';
 import navIcon from '../../images/logos/logo.png'
 import headerImg from '../../images/logos/Frame.png'
 import './HeaderOfHome.css'
+import { Link } from 'react-router-dom';
 const HeaderOfHome = () => {
     return (
       <>
@@ -17,7 +18,9 @@ const HeaderOfHome = () => {
             <a className="nav-link p2" href="#">Our Porfolio</a>
             <a className="nav-link p2" href="#">Our Team</a>
             <a className="nav-link p2" href="#" tabindex="-1" aria-disabled="true">Contact Us</a>
+            <Link to="/login" >
             <button className='p3 btn btn-lg btn-dark'>Login</button>
+            </Link>
           </div>
         </div>
       </nav>
